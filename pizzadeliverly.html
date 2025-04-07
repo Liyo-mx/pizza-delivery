@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza Delivery Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+        <header>
+            <h1>🍕 Pizza Pickup Tracker</h1>
+            <p> Order your pizza and track it in real-time from preparation to pickup</p>
+        </header>
+
+        <div class="order-section" id="orderSection">
+            <h2 class="section-title">Create Your Order</h2>
+
+   
+     <div class="pizza-form">
+        <div>
+      
+        <div class="form-group">
+            <label for="pizzaSize">Pizza Size</label>
+            <select id="pizzaSize">
+                <option value="small">Small (10")</option>
+                <option value="medium"selected>Medium (12")</option>
+                <option value="large">Large (14")</option>
+                <option value="xlarge">Extra Large (16")</option>
+            </select>
+
+        </div>
+        <div class="form-group">
+            <label for="crustType">Crust Type</label>
+            <select id="crustType">
+                <option value="thin">Thin Crust</option>
+                <option value="regular" selected>Regular Crust</option>
+                <option value="thick">Thick Crust</option>
+                <option value="stuffed">Stuffed Crust</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="toppings">Toppings(Multiple)</label>
+            <select id="toppings" multiple size="4">
+                <option value="pepperoni">Pepperoni</option>
+                <option value="mushrooms">Mushrooms</option>
+                <option value="onions">Onions</option>
+                <option value="sausage">Sausage</option>
+                <option value="bacon">Bacon</option>
+                <option value="extra_cheese">Extra Cheese</option>
+                <option value="peppers">Bell Peppers</option>
+                <option value="olives">Olives</option>
+               
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="name"> Your Name</label>
+            <input type="text" id="name" placeholder="John Doe">
+        </div>
+
+        <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" placeholder="(555) 555-5555">
+        </div>
+    </div>
+    </div>
+</div>
+
+        <div class="order-summary">
+            <div class="summary-title">Order Summary</div>
+            <div class="summary-item">
+                <span> Medium (12") Regular Crust Pizza</span>
+                <span>$12.99</span>
+            </div>
+            <div class summary-item>
+                <span> Selected Toppings (0)</span>
+                <span>$0.00</span>
+            </div> 
+            <div class="summary-total">
+                Total: $12.99
+            </div>
+        </div>
+
+        <div class="button-container">
+            <button id="placeOrderBtn">Place Order</button>
+        </div>
+        <div class="tracker-section" id="trackerSection">
+            <h2 class="section-title">Track Your Order</h2>
+
+            <div class="progress-bar-container">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+
+                <div class="progress-steps">
+                    <div class="progress-step active" id="step1">1
+                        <span class="step-label">Order Recieved</span>
+                    </div>
+                    <div class="progress-step" id="step2">2
+                        <span class="step-label">Preparing</span>
+                    </div>
+                  
+                    <div class="progress-step" id="step3">3
+                        <span class="step-label">In the Oven</span>
+                    </div>
+                    <div class="progress-step" id="step4">4
+                       <span class="step-label">Quality Check</span>
+                    </div>
+                    <div class="progress-step" id="step5">5
+                        <span class="step-label">Ready for Pickup</span>
+                     </div>
+                    </div>
+                </div>
+        
+                
+
+                <div class="delivery-info">
+                    <div class="delivery-detail">
+                        <div class="detail-label">Ready In</div>
+                        <div class="detail-value" id="estimatedTime">--:--</div>
+                    </div>
+
+                    <div class="delivery-detail">
+                        <div class="detail-label">Current Status</div>
+                        <div class="detail-value" id="currentStatus">Order Recieved</div>
+                    </div>
+                    
+                    <div class="delivery-detail">
+                        <div class="detail-label">Order Number</div>
+                        <div class="detail value" id="orderNumber">#12345</div>
+                    </div>
+                </div>
+
+                <div class="status-update">
+                    <div class="status-title"> Order Updates</div>
+                    <div class="update-list" id="updateList">
+                        <!-- Updates will be added -->
+                    </div>
+                </div>
+
+                <!-- :> -->
+
+                <div class="timer-info">
+                    <h3>Javascript Timer Methods Used:</h3>
+                    <p>This tracker uses <code>setTimeout()</code> to stimulate each stage of the pizza preparation process. For demonstration purposes, the process has been accelerated (1 minute in real life= 1 second in the demo). The timer for pickup readiness uses <code>setInterval()</code> to update every second, and <code>clearInterval()</code> is used when the pizza is ready for pickup.</p>
+                </div>
+
+                <div class="button-container">
+                    <button id="newOrderBtn">Place Another Order</button>
+                    <button id="pickedUpBtn" style="background-color: var(--accent-color); display:none;">Mark as Picked UP</button>
+                </div>
+
+        
+                
+                <div class="notification" id="notification"> Your order has been placed!</div>
+
+                <footer>
+                    <p>Pizza Pickup Tracker- Demonstrating Javascript Timer Method for Real-Time Updates</p>
+                </footer>
+            </div>
+     
+    
+</div>
+
+<script src="script.js"></script>
+    
+</body>
+</html>
